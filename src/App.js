@@ -1,12 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import Hero from "./components/main-page/layout/Hero";
 import GlobalStyle from "./GlobalStyle"
 
 const AppContainer = styled.div`
-  min-height: 100vh;
-  width: 100%;
+  
 `
 
 const Main = styled.main`
+  height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,7 +20,7 @@ function App() {
     <AppContainer className="App">
       <GlobalStyle />
       <Main>
-        <h1>Hello world</h1>
+          <Hero />
       </Main>
     </AppContainer>
   );
