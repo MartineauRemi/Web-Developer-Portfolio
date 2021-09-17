@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     html{
@@ -32,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
         --light-primary: #F8F8FB;
 
         --dark-primary: #020817;
+        --dark-secondary: #151719;
 
         --blue-primary: rgba(97,99,255,1);
         --blue-secondary: rgba(97,99,255,0.6);

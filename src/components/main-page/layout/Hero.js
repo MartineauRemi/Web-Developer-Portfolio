@@ -95,7 +95,7 @@ const Img = styled.img`
 
 export default function Hero() {
     return (
-        <HeroSection>
+        <HeroSection id="hero">
             <Content>
                 <div>
                     <h1>RÉMI MARTINEAU</h1>

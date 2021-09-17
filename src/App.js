@@ -1,10 +1,7 @@
 import styled from "styled-components"
 import Hero from "./components/main-page/layout/Hero";
+import Header from "./components/shared/layout/Header";
 import GlobalStyle from "./GlobalStyle"
-
-const AppContainer = styled.div`
-  
-`
 
 const Main = styled.main`
   height: 100%;
@@ -17,12 +14,13 @@ const Main = styled.main`
 
 function App() {
   return (
-    <AppContainer className="App">
+    <div className="App">
       <GlobalStyle />
       <Main>
+          <Header />
           <Hero />
       </Main>
-    </AppContainer>
+    </div>
   );
 }
 
