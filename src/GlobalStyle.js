@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 2.5rem;
         line-height: 3.5rem;
         letter-spacing: .8px;
-        font-weight: var(--fw-lg);
+        font-weight: var(--fw-xl);
     }
 
     h2{
