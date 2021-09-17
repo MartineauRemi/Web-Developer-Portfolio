@@ -1,7 +1,8 @@
-import styled from "styled-components"
-import Hero from "./components/main-page/layout/Hero";
-import Header from "./components/shared/layout/Header";
-import GlobalStyle from "./GlobalStyle"
+import styled from 'styled-components'
+import Hero from './components/main-page/layout/Hero'
+import Header from './components/shared/layout/Header'
+import Footer from './components/shared/layout/Footer'
+import GlobalStyle from './GlobalStyle'
 
 const Main = styled.main`
   height: 100%;
@@ -19,6 +20,7 @@ function App() {
       <Main>
           <Header />
           <Hero />
+          <Footer />
       </Main>
     </div>
   );
