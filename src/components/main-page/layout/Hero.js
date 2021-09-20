@@ -10,7 +10,9 @@ const HeroSection = styled.section`
     height: 100vh;
     width: 100%;
     padding: 0 var(--h-padding);
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--dark-primary);
     color: var(--white);
     text-align: center;
@@ -25,7 +27,6 @@ const HeroSection = styled.section`
 `
 
 const Content = styled.div`
-    place-self: center;
     max-width: var(--layout-max-width);
     width: 100%;
     display: flex;
