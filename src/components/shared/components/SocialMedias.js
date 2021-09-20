@@ -2,19 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaGithub, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 
-const socialMedias = {
-    github : {
-        username: '',
-        url: ''
-    },
-    linkedin: {
-        username: '',
-        url: ''
-    },
-    twitter: {
-        username: '',
-        url: ''
-    }
+const SOCIAL_MEDIAS = {
+    github : 'https://github.com/MartineauRemi',
+    linkedin: 'https://www.linkedin.com/in/rémi-martineau',
+    twitter: 'https://twitter.com/MartineauRmi1'
 }
 
 const SocialMedia = styled.a`
@@ -36,7 +27,7 @@ const SocialMedia = styled.a`
 export const Github = () => {
     return (
         <SocialMedia
-            href={socialMedias.github.url}
+            href={SOCIAL_MEDIAS.github}
             target="_blank"
             rel="noreferrer">
                 <FaGithub />
@@ -47,7 +38,7 @@ export const Github = () => {
 export const Linkedin = () => {
     return (
         <SocialMedia
-            href={socialMedias.linkedin.url}
+            href={SOCIAL_MEDIAS.linkedin}
             target="_blank"
             rel="noreferrer">
                 <FaLinkedinIn />
@@ -58,7 +49,7 @@ export const Linkedin = () => {
 export const Twitter = () => {
     return (
         <SocialMedia
-            href={socialMedias.twitter.url}
+            href={SOCIAL_MEDIAS.twitter}
             target="_blank"
             rel="noreferrer">
                 <FaTwitter />
