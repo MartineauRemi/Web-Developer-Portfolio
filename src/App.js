@@ -3,6 +3,7 @@ import Hero from './components/main-page/layout/Hero'
 import Header from './components/shared/layout/Header'
 import Footer from './components/shared/layout/Footer'
 import GlobalStyle from './GlobalStyle'
+import Portfolio from './components/main-page/layout/Portfolio'
 
 const Main = styled.main`
   height: 100%;
@@ -11,6 +12,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 `
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
       <Main>
           <Header />
           <Hero />
+          <Portfolio />
           <Footer />
       </Main>
     </div>

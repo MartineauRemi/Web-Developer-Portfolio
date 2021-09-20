@@ -39,7 +39,9 @@ const GlobalStyle = createGlobalStyle`
         --blue-secondary: rgba(97,99,255,0.6);
         --blue-ternary: rgba(97,99,255,0.3);
 
-        --gradient-blue-white: linear-gradient(135deg, white,rgba(97,99,255,0.3));
+        --gray: #cccccc;
+
+        --gradient-blue-white: linear-gradient(135deg, white, rgba(97,99,255,0.3));
 
 
         //font-weight
@@ -61,7 +63,14 @@ const GlobalStyle = createGlobalStyle`
     h2{
         font-size: 2.25rem;
         line-height: 3.125rem;
-        font-weight: var(---fw-xl);
+        font-weight: var(--fw-xl);
+    }
+
+    h3{
+        font-size: 1.375rem;
+        line-height: 1.5rem;
+        font-weight: var(--fw-lg);
+        letter-spacing: 1px;
     }
 
     p{
