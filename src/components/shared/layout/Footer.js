@@ -89,7 +89,7 @@ const Line = styled.div`
 
 export default function Footer() {
     return (
-        <Wrapper>
+        <Wrapper id="contact">
             <Content>
                 <Logo className="footer__logo">&lt;/&gt;</Logo>
                 <SocialMedias className="footer__social-medias"/>

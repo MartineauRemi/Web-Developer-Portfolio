@@ -30,7 +30,7 @@ const List = styled.div`
 
 export default function Portfolio() {
     return (
-        <Wrapper>
+        <Wrapper id="portfolio">
             <Content>
                 <SectionTitle
                     title="MES DERNIERS PROJETS"
