@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations'
-import { Button } from '../../shared/components/Buttons'
+import { LinkButton } from '../../shared/components/Buttons'
 
 const Wrapper = styled.div`
     justify-self: center;
@@ -85,7 +85,7 @@ const ButtonsContainer = styled.div`
     }
 `
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(LinkButton)`
     font-size: 0.825rem;
     @media screen and (min-width: 1024px){
         font-size: 1rem;
@@ -121,8 +121,16 @@ export default function Thumbnail({thumbnail}) {
                         </Description>
 
                         <ButtonsContainer>
-                            <StyledButton secondary>Accéder au code</StyledButton>
-                            <StyledButton secondary>Visiter le site</StyledButton>
+                            <StyledButton
+                                secondary
+                                href="">
+                                    Accéder au code
+                            </StyledButton>
+                            <StyledButton
+                                secondary
+                                href="">
+                                Visiter le site
+                            </StyledButton>
                         </ButtonsContainer>
                     </HoverFrameContent>
                 </HoverFrame>
