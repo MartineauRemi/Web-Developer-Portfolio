@@ -8,7 +8,8 @@ export const Button = styled.button`
     font-weight: var(--fw-lg);
     border: 1px solid var(--white);
 
-    ${props => props.primary && css`                    //Primary button
+    //Primary button design
+    ${props => props.primary && css`
         color: var(--white);
         background-color: var(--blue-primary);
         border-color: var(--blue-primary);
@@ -19,13 +20,23 @@ export const Button = styled.button`
         }
     `}
 
-    ${props => props.secondary && css`                  //Secondary button
+    //Secondary button design
+    ${props => props.secondary && css`
         color: var(--white);
         background-color: transparent;
         border-color: var(--white);
+
+        &:hover{
+            color: var(--blue-primary);
+            background-color: var(--white);
+        }
     `}
 `
 
+
+/**
+ * Hamburger button design. Used to toggle the main nav menu.
+ */
 const MenuBtn = styled(Button)`
     background-color: transparent;
     position: relative;
@@ -72,16 +83,29 @@ export const MenuButton = (props) => {
     )
 }
 
+/*___BUTTON STYLED LINKS___*/
+
 const Link = styled.a`
     color: var(--white);
     outline: none;
     text-decoration: none;
 `
 
+/**
+ * @param props
+ *  'href' is the only required prop, the others are for styling
+ * 
+ * @returns a link styled like a button
+ */
+
 export const LinkButton = (props) => {
     return (
-        <Link href={props.href}>
-            <Button {...props}>{props.children}</Button>
+        <Link
+            {...props}
+            href={props.href}>
+            <Button {...props}>
+                {props.children}
+            </Button>
         </Link>
     )
 }
