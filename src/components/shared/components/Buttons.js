@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { MdKeyboardArrowDown as Arrow} from 'react-icons/md'
 
 export const Button = styled.button`
     padding: 1rem;
@@ -29,6 +30,16 @@ export const Button = styled.button`
         &:hover{
             color: var(--blue-primary);
             background-color: var(--white);
+        }
+    `}
+
+    ${props => props.borderless && css`
+        border: none;
+        background: transparent;
+        color: ${props => props.color || 'var(--black)'};
+
+        &:hover{
+            color: var(--blue-primary);
         }
     `}
 `
@@ -72,6 +83,34 @@ const MenuBtn = styled(Button)`
         }
     }
 `
+
+const BorderlessArrowDownBtn = styled(Button)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+
+/**
+ * 
+ * @param {*} props
+ * label: button text
+ * without label, only an arrow
+ * 
+ */
+
+export const BorderlessArrowDownButton = (props) => {
+    return (
+        <BorderlessArrowDownBtn {...props}>
+            {props.label && (
+                <span>
+                    {props.label}
+                </span>
+            )}
+            <Arrow size="2rem"/>
+        </BorderlessArrowDownBtn>
+    )
+}
 
 export const MenuButton = (props) => {
     return (

@@ -38,7 +38,7 @@ const HoverFrame = styled.div`
     align-items: center;
 
     &.show{
-        background-color: rgba(0,0,0,0.8); //rgba(97,99,255,.9);
+        background-color: rgba(0,0,0,0.8);      //rgba(97,99,255,.9);
     }
 `
 
