@@ -9,14 +9,15 @@ import styled, { css } from 'styled-components'
  */
 
 const Nav = styled.nav`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     @media screen and (max-width: 767px){
         transition: all .3s ease-in-out;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         ${props => props.headerMenu && css`
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
@@ -25,7 +26,7 @@ const Nav = styled.nav`
             background-color: var(--dark-secondary);
             
             &.close{
-                left: -100%;
+                left: -100vw;
             }
         `}
     }
@@ -34,6 +35,7 @@ const Nav = styled.nav`
 const List = styled.ul`
     display: grid;
     row-gap: ${props => props.headerMenu ? '5rem' : '2rem'};
+    font-size: ${props => props.headerMenu ? '1.25rem' : '1rem'};
 
     @media screen and (min-width: 768px){
         grid-template-columns: repeat(3, auto);
@@ -47,7 +49,6 @@ const Item = styled.li`
     a{
         color: white;
         text-decoration: none;
-        font-size: 1.25rem;
         letter-spacing: 1.2px;
         font-weight: var(--fw-lg);
 
@@ -70,20 +71,26 @@ export default function MainNav(props) {
     return (
         <Nav
             {...props}
-            className={props.menuOpen? "open" : "close"}>
-            <List {...props}>
-                <Item onClick={() => onClickItem()}>
-                    <a href="#about">
+            className={`${props.className} ${props.menuOpen? "open" : "close"}`}>
+            <List headerMenu = {props.headerMenu}>
+                <Item
+                    onClick={() => onClickItem()}>
+                    <a
+                        href="#about">
                         À PROPOS
                     </a>
                 </Item>
-                <Item onClick={() => onClickItem()}>
-                    <a href="#portfolio">
+                <Item
+                    onClick={() => onClickItem()}>
+                    <a
+                        href="#portfolio">
                         PORTFOLIO
                     </a>
                 </Item>
-                <Item onClick={() => onClickItem()}>
-                    <a href="#contact">
+                <Item
+                    onClick={() => onClickItem()}>
+                    <a
+                        href="#contact">
                         CONTACT
                     </a>
                 </Item>
