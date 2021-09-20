@@ -14,6 +14,14 @@ const Wrapper = styled.div`
     background-position: top center;
     position: relative;
     overflow: hidden;
+    transition: all .3s ease-in-out;
+    top: 0;
+
+    @media screen and (min-width: 1024px){
+        &:hover{
+            top: -0.25rem;
+        }
+    }
 `
 
 const HoverFrame = styled.div`
@@ -30,7 +38,7 @@ const HoverFrame = styled.div`
     align-items: center;
 
     &.show{
-        background-color: rgba(97,99,255,.9);
+        background-color: rgba(0,0,0,0.8); //rgba(97,99,255,.9);
     }
 `
 
@@ -127,7 +135,7 @@ export default function Thumbnail({thumbnail}) {
                                     Accéder au code
                             </StyledButton>
                             <StyledButton
-                                secondary
+                                primary
                                 href="">
                                 Visiter le site
                             </StyledButton>
