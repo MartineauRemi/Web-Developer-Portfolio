@@ -100,7 +100,7 @@ const StyledButton = styled(LinkButton)`
     }
 `
 
-export default function Thumbnail({thumbnail}) {
+export default function Thumbnail({data}) {
     const [show, setShow] = useState(false)
 
     function onMouseEnter(){
@@ -114,29 +114,29 @@ export default function Thumbnail({thumbnail}) {
     return (
         <Wrapper
             className={show ? 'show' : ''}
-            thumbnail={thumbnail}
+            thumbnail={data.thumbnail}
             onMouseEnter={() => onMouseEnter()}
             onMouseLeave={() => onMouseLeave()}>
                 <HoverFrame className={show ? 'show' : ''}>
                     <HoverFrameContent className={show ? 'show' : ''}>
                         <TitlesContainer>
-                            <Title>Title</Title>
-                            <h4>Subtitle</h4>
+                            <Title>{data.title}</Title>
+                            <h4>{data.subtitle}</h4>
                         </TitlesContainer>
 
                         <Description>
-                            A small description of the application, it's purpose, functionalities ..
+                            {data.description}
                         </Description>
 
                         <ButtonsContainer>
                             <StyledButton
                                 secondary
-                                href="">
+                                href={data.github_url}>
                                     Accéder au code
                             </StyledButton>
                             <StyledButton
                                 primary
-                                href="">
+                                href={data.website_url}>
                                 Visiter le site
                             </StyledButton>
                         </ButtonsContainer>
