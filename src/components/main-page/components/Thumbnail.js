@@ -131,12 +131,16 @@ export default function Thumbnail({data}) {
                         <ButtonsContainer>
                             <StyledButton
                                 secondary
-                                href={data.github_url}>
+                                href={data.github_url}
+                                target='_blank'
+                                rel='noreferrer'>
                                     Accéder au code
                             </StyledButton>
                             <StyledButton
                                 primary
-                                href={data.website_url}>
+                                href={data.website_url}
+                                target='_blank'
+                                rel='noreferrer'>
                                 Visiter le site
                             </StyledButton>
                         </ButtonsContainer>
