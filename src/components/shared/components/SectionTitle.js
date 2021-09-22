@@ -9,7 +9,7 @@ const Title = styled.h2`
     z-index: 1;
 `
 
-const Outline = styled.h1`
+const Outline = styled.h3`
     -webkit-text-stroke: 1px var(--gray);
     font-weight: var(--fw-xl);
     letter-spacing: 0.8px;
