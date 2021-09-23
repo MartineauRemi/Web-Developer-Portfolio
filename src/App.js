@@ -1,9 +1,17 @@
+import { lazy, Suspense } from 'react'
 import styled from 'styled-components'
+import GlobalStyle from './GlobalStyle'
 import Hero from './components/main-page/layout/Hero'
 import Header from './components/shared/layout/Header'
-import Footer from './components/shared/layout/Footer'
-import GlobalStyle from './GlobalStyle'
-import Portfolio from './components/main-page/layout/Portfolio'
+
+//lazy-loading the main sections of the website
+
+const Footer = lazy(() => import('./components/shared/layout/Footer'))
+const About = lazy(() => import('./components/main-page/layout/About'))
+const Portfolio = lazy(() => import('./components/main-page/layout/Portfolio'))
+
+
+//styling
 
 const Main = styled.main`
   height: 100%;
@@ -22,8 +30,15 @@ function App() {
       <Main>
           <Header />
           <Hero />
-          <Portfolio />
-          <Footer />
+          <Suspense fallback={<div/>}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<div/>}>
+            <Portfolio />
+          </Suspense>
+          <Suspense fallback={<div />}>
+            <Footer />
+          </Suspense>
       </Main>
     </div>
   );
