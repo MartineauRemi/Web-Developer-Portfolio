@@ -49,8 +49,9 @@ const Item = styled.li`
     a{
         color: white;
         text-decoration: none;
-        letter-spacing: 1.2px;
-        font-weight: var(--fw-lg);
+        letter-spacing: 1px;
+        line-height: 1.5rem;
+        font-weight: var(--fw-reg);
 
         &:hover{
             color: var(--blue-primary);
