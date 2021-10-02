@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations'
-import { LinkButton } from '../../shared/components/Links'
+import { LinkButton } from '../../shared/components/Buttons'
 
 const Wrapper = styled.div`
     justify-self: center;
     width: 100%;
-    height: 21.25rem;
+    height: 23.25rem;
     border-radius: var(--border-radius);
-    background-image: ${props => props.thumbnail ? `url(${props.thumbnail})` : 'none'};
+    background-image: ${props => `url(${props.thumbnail})`};
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -16,7 +16,12 @@ const Wrapper = styled.div`
     overflow: hidden;
     transition: all .3s ease-in-out;
     top: 0;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+
+    @media screen and (min-width: 1024px){
+        &:hover{
+            top: -0.25rem;
+        }
+    }
 `
 
 const HoverFrame = styled.div`
@@ -26,13 +31,14 @@ const HoverFrame = styled.div`
     width: 100%;
     height: 100%;
     background-color: transparent;
+    border-radius: var(--border-radius);
     transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &.show{
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0.8);      //rgba(97,99,255,.9);
     }
 `
 
@@ -61,16 +67,19 @@ const TitlesContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     border-bottom: 1px solid rgba(255,255,255, 0.5);
 `
 
 const Title = styled.h3`
-    place-self: flex-start center;
-    margin-bottom: .5rem;
+    place-self: center flex-start;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 `
 
 const Description = styled.p`
-    place-self: center flex-start;
+    place-self: center;
 `
 
 const ButtonsContainer = styled.div`
@@ -79,13 +88,13 @@ const ButtonsContainer = styled.div`
     flex-direction: row;
     align-items: center;
 
-    a:first-child{
+    button:first-child{
         margin-right: 1rem;
     }
 `
 
 const StyledButton = styled(LinkButton)`
-    font-size: 0.75rem;
+    font-size: 0.825rem;
     @media screen and (min-width: 1024px){
         font-size: 1rem;
     }
@@ -93,7 +102,6 @@ const StyledButton = styled(LinkButton)`
 
 export default function Thumbnail({data}) {
     const [show, setShow] = useState(false)
-    const URL_REGEX = "(www|http:|https:)+[^\s]+[\w]"
 
     function onMouseEnter(){
         setShow(true)
@@ -103,24 +111,14 @@ export default function Thumbnail({data}) {
         setShow(false)
     }
 
-    function validate(data){
-        return (
-            data
-            && data.title
-            && data.github_url
-            && data.website_url
-        )
-    }
-
     return (
-        validate(data)
-        ? (<Wrapper
-            className={`thumbnail ${show ? 'show' : ''}`}
+        <Wrapper
+            className={show ? 'show' : ''}
             thumbnail={data.thumbnail}
             onMouseEnter={() => onMouseEnter()}
             onMouseLeave={() => onMouseLeave()}>
-                <HoverFrame className={`hoverframe ${show ? 'show' : ''}`}>
-                    <HoverFrameContent className={`hoverframe-content ${show ? 'show' : ''}`}>
+                <HoverFrame className={show ? 'show' : ''}>
+                    <HoverFrameContent className={show ? 'show' : ''}>
                         <TitlesContainer>
                             <Title>{data.title}</Title>
                             <h4>{data.subtitle}</h4>
@@ -148,7 +146,6 @@ export default function Thumbnail({data}) {
                         </ButtonsContainer>
                     </HoverFrameContent>
                 </HoverFrame>
-        </Wrapper>)
-        : null
+        </Wrapper>
     )
 }
