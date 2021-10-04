@@ -8,36 +8,31 @@ export const Button = styled.button`
     font-size: 1rem;
     font-weight: var(--fw-lg);
     border: 1px solid var(--white);
-
+    transition: all .3s ease-in-out;
     //Primary button design
     ${props => props.primary && css`
         color: var(--white);
         background-color: var(--blue-primary);
         border-color: var(--blue-primary);
-
         &:hover{
             background-color: var(--blue-secondary);
             border-color: var(--blue-secondary);
         }
     `}
-
     //Secondary button design
     ${props => props.secondary && css`
         color: var(--white);
         background-color: transparent;
         border-color: var(--white);
-
         &:hover{
             color: var(--blue-primary);
             background-color: var(--white);
         }
     `}
-
     ${props => props.borderless && css`
         border: none;
         background: transparent;
         color: ${props => props.color || 'var(--black)'};
-
         &:hover{
             color: var(--blue-primary);
         }
@@ -54,7 +49,6 @@ const MenuBtn = styled(Button)`
     width: 1.5rem;
     height: 1.5rem;
     border: none;
-
     span{
         width: 100%;
         height: 3px;
@@ -62,20 +56,17 @@ const MenuBtn = styled(Button)`
         position: absolute;
         right: 0;
         transition: all 0.3s ease-in;
-
         &:first-child{
             top: ${props => props.menuOpen ? '1rem' : '1.25rem'};
             left: ${props => props.menuOpen ? '0' : 'unset'};
             width: ${props => props.menuOpen ? '100%': '80%'};
             transform: ${props => props.menuOpen ? 'rotate(-45deg)' : 'none'}
         }
-
         &:nth-child(2){
             top: 0.75rem;
             width: ${props => props.menuOpen ? '0' : '60%'};
             transition: all 0.1s ease-in;
         }
-
         &:last-child{
             top: ${props => props.menuOpen ? '1rem' : '0.25rem'};
             left: ${props => props.menuOpen ? '0' : 'unset'};
@@ -88,6 +79,8 @@ const BorderlessArrowDownBtn = styled(Button)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: var(--fw-xl);
+    font-size: 1.125rem;
 `
 
 
@@ -124,11 +117,11 @@ export const MenuButton = (props) => {
 
 /*___BUTTON STYLED LINKS___*/
 
-const Link = styled.a`
-    color: var(--white);
-    outline: none;
-    text-decoration: none;
-`
+// const Link = styled.a`
+//     color: var(--white);
+//     outline: none;
+//     text-decoration: none;
+// `
 
 /**
  * @param props
@@ -137,14 +130,16 @@ const Link = styled.a`
  * @returns a link styled like a button
  */
 
-export const LinkButton = (props) => {
-    return (
-        <Link
-            {...props}
-            href={props.href}>
-            <Button {...props}>
-                {props.children}
-            </Button>
-        </Link>
-    )
-}
+// export const LinkButton = (props) => {
+//     return (
+//         <Link
+//             id={props.id}
+//             href={props.href}
+//             target={props.target}
+//             rel={props.rel}>
+//             <Button {...props}>
+//                 {props.children}
+//             </Button>
+//         </Link>
+//     )
+// }
