@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { LinkButton } from '../../shared/components/Buttons'
+import { LinkButton } from '../../shared/components/Links'
 import blob from '../../../assets/main-page/blob.svg'
-import bgBlob from '../../../assets/main-page/bg-blob.svg'
 import hero from '../../../assets/main-page/hero.svg'
 
 
@@ -17,8 +16,20 @@ const HeroSection = styled.section`
     color: var(--white);
     text-align: center;
 
+    h1{
+        @media screen and (max-width: 767px){
+            font-size: 1.75rem;
+        }
+    }
+
     h2{
         margin-bottom: 2rem;
+        -webkit-text-stroke: 1px var(--gray);
+        color: transparent;
+
+        @media screen and (max-width: 767px){
+            font-size: 1.625rem;
+        }
     }
 
     @media screen and (min-width: 1150px){
@@ -41,24 +52,12 @@ const Content = styled.div`
 
 const ButtonsContainer = styled.div`
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 
-    button:last-child{
-        margin-bottom: 1rem;
-    }
-
-    @media screen and (min-width: 425px){
-        flex-direction: row;
-        justify-content: center;
-
-        button:first-child{
-            margin-right: 1rem;
-        }
-
-        button:last-child{
-            margin-bottom: 0;
-        }
+    a:first-child{
+        margin-right: 1rem;
     }
 
     @media screen and (min-width: 1150px){
@@ -103,11 +102,13 @@ export default function Hero() {
                     <h2>Web Developer</h2>
                     <ButtonsContainer>
                         <LinkButton
+                            id="hero-link-to-contact"
                             href="#contact"
                             secondary>
                                 Contact
                         </LinkButton>
                         <LinkButton
+                            id='hero-link-to-portfolio'
                             href="#portfolio"
                             primary>
                                 Portfolio
